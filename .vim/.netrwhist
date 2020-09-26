@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/pandora/.vim/autoload'
+let g:netrw_dirhist_2='/home/pandora/.vim'
+let g:netrw_dirhist_1='/home/pandora/Workspace/sitejet/app/docker-compose'
