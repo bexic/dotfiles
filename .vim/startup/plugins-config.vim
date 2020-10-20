@@ -12,32 +12,28 @@ let g:user_emmet_install_global = 0
 let g:javascript_plugin_jsdoc = 1
 
 " === ALE Settings ===
-" Map keys to navigate between lines with errors and warnings.
-nnoremap <leader>an :ALENextWrap<cr>
-nnoremap <leader>ap :ALEPreviousWrap<cr>
-highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
-highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
-" let g:ale_sign_error = 'X' " could use emoji
-" let g:ale_sign_warning = '?' " could use emoji
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '?'
+let g:ale_sign_column_always = 1
 let g:ale_statusline_format = ['X %d', '? %d', '']
+let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_text_changed = 0
-let g:ale_linters_explicit = 1
 let g:ale_echo_msg_format = '[%linter%]: %s'
+let g:ale_linters_explicit = 1
 let g:ale_linters = {
-\   'java': ['checkstyle'],
-\   'javascript': [ 'eslint'],
-\   'typescript': ['tsserver', 'tslint'],
-\   'jsx': [ 'eslint']
-\}
+      \   'javascript': ['eslint'],
+      \   'typescript': ['eslint'],
+      \   'jsx': ['eslint']
+      \}
 let g:ale_fixers = {
-\   'java': ['google_java_format'],
-\   'javascript': [ 'eslint'],
-\   'typescript': ['prettier'],
-\   'jsx': [ 'eslint']
-\}
-let g:ale_java_checkstyle_options = '-c ~/.java/checkstyle.xml'
+      \   'javascript': ['eslint'],
+      \   'typescript': ['prettier', 'eslint'],
+      \   'jsx': ['prettier', 'eslint']
+      \}
 
 " === Airline Config ===
 let g:airline#extensions#ale#enabled = 1
@@ -46,29 +42,27 @@ let g:airline_powerline_fonts = 1
 
 " === MatchTagAlways Settings ===
 let g:mta_filetypes = {
-\   'javascript.jsx': 1,
-\}
+      \   'javascript.jsx': 1,
+      \}
 
 " === FZF Settings ===
-set runtimepath+=~/.fzf
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview(), <bang>0)
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-" === Prettier ===
-let g:prettier#config#use_tabs = 'true'
-let g:prettier#config#single_quote = 'false'
-let g:prettier#config#trailing_comma = 'none'
+let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --hidden -g "" --ignore-dir=.git'
 
 " === Tern ===
 let g:tern#command = ['tern', '--no-port-file --persistent']
 
 " === NERDTree ===
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeShowLineNumbers = 1
-let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 1
+let g:NERDTreeShowLineNumbers = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore = ['^node_modules$']
 
 " === Limelight ===
 let g:limelight_conceal_ctermfg = 240
+
+" === GitGutter ===
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '✹'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '-'
+let g:gitgutter_sign_modified_removed = '-'
