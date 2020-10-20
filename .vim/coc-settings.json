@@ -1,0 +1,36 @@
+{
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "css",
+    "markdown",
+    "Markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact"
+  ],
+
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact"
+  ],
+
+  "snippets.extends": {
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"],
+    "typescript.tsx": ["javascript"],
+    "typescriptreact": ["javascript"]
+  },
+
+  "prettier.requireConfig": true,
+  "prettier.disableSuccessMessage": true,
+  "prettier.onlyUseLocalVersion": true,
+
+  "tsserver.formatOnType": true
+}
