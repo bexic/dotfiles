@@ -1,5 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/pandora/Workspace/dev/kcd/testing-javascript-course/3-js-mocking-fundamentals/src/__tests__'
+let g:netrw_dirhist_7='/Users/pandora/Workspace/dev/twitter-clone/pages'
+let g:netrw_dirhist_6='/Users/pandora/Workspace/dev/twitter-clone/styles/tailwind.css'
+let g:netrw_dirhist_5='/Users/pandora/.config'
+let g:netrw_dirhist_4='/Users/pandora/.vim'
 let g:netrw_dirhist_3='/home/pandora/.vim/autoload'
 let g:netrw_dirhist_2='/home/pandora/.vim'
 let g:netrw_dirhist_1='/home/pandora/Workspace/sitejet/app/docker-compose'
